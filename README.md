@@ -1,10 +1,12 @@
 # Research & Decision Systems
 
-**Portfolio of research products and decision tools**
+**Public portfolio surface for KAHRELUM OS**
 
-This is the main public portfolio for the systems and research products built by Hasan Raza Kazmi.
+Hasan Raza Kazmi — Founder, KAHRELUM OS
 
-It brings together tools for evidence checking, structured analysis, and decision support under uncertainty.
+This repository powers the live portfolio for evidence-grounded AI evaluation, research systems, and decision-support work.
+
+Canonical architecture: [kahrelum-os](https://github.com/AuroraGrid/kahrelum-os)
 
 ---
 
@@ -14,13 +16,12 @@ It brings together tools for evidence checking, structured analysis, and decisio
 
 ---
 
-## What you will find here
+## Modules highlighted
 
-- Clear overviews of the main systems (AURORA GRID, RECORD LOCK, and others)
-- Selected research case studies
-- Links to live products and source code
-
-The focus is on work that is actually built and usable, not just concepts.
+- **KAHRELUM OS** — control-plane architecture and doctrine
+- **RECORD LOCK** — evidence verification and controlled publication
+- **AI Red-Team Dashboard** — authorized model-behavior evaluation
+- **Intel Tripwire** — staged operating picture and source health
 
 ---
 
@@ -30,13 +31,14 @@ The focus is on work that is actually built and usable, not just concepts.
 - Keep sources and uncertainty visible
 - Prefer clear language over jargon
 - Maintain honest status (what works vs what is still in progress)
+- Separate facts from inference; do not confuse model confidence with accuracy
 
 ---
 
 ## Creator
 
 **Hasan Raza Kazmi**  
-AI Product Builder & Strategic Intelligence Analyst  
+Founder, KAHRELUM OS  
 Pakistan · Fully remote
 
 Email: Grindwireproject@gmail.com  
@@ -46,4 +48,4 @@ GitHub: https://github.com/AuroraGrid
 
 ## Technical note
 
-This repository powers the live portfolio site. Changes should go through review so the public pages stay accurate and complete.
+Changes should go through review so public pages stay accurate and complete.
