@@ -14,6 +14,8 @@ Canonical architecture: [kahrelum-os](https://github.com/AuroraGrid/kahrelum-os)
 
 → [https://hasan-research-systems.vercel.app/](https://hasan-research-systems.vercel.app/)
 
+Architecture: [https://kahrelum-os.vercel.app/](https://kahrelum-os.vercel.app/)
+
 ---
 
 ## Modules highlighted
@@ -39,7 +41,7 @@ Canonical architecture: [kahrelum-os](https://github.com/AuroraGrid/kahrelum-os)
 
 **Hasan Raza Kazmi**  
 Founder, KAHRELUM OS  
-Pakistan · Fully remote
+global · remote
 
 Email: Grindwireproject@gmail.com  
 GitHub: https://github.com/AuroraGrid
