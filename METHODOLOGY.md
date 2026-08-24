@@ -1,6 +1,6 @@
 # Methodology
 
-Research & Decision Systems publishes source-backed analytical work using explicit evidence classes and revision rules.
+KAHRELUM OS / Research & Decision Systems publishes source-backed analytical work using explicit evidence classes and revision rules.
 
 ## Evidence classes
 
@@ -10,6 +10,10 @@ Research & Decision Systems publishes source-backed analytical work using explic
 - **Forecast:** a probabilistic judgment about a future outcome.
 - **Unresolved claim:** material but insufficiently established.
 - **Not established:** the available record does not support the proposition.
+
+Aligned claim labels used across KAHRELUM roles (SCOUT / BLACKGLASS / publication):
+
+FACT · INFERENCE · FORECAST · SPECULATION · UNVERIFIED CLAIM
 
 ## Research sequence
 
@@ -29,6 +33,7 @@ Research & Decision Systems publishes source-backed analytical work using explic
 - Historical dossiers are evaluated for provenance, completeness, and evidentiary limits.
 - Policy analysis distinguishes legal text, institutional position, political proposal, and operational implementation.
 - Interface design must not imply live data, certainty, or functionality that does not exist.
+- Model confidence is never treated as proof.
 
 ## Revision standard
 
