@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1600" viewBox="0 0 1200 1600" role="img" aria-label="KAHRELUM OS portfolio layout mockup">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0f14"/>
+      <stop offset="100%" stop-color="#121a24"/>
+    </linearGradient>
+    <style>
+      .label { font-family: ui-sans-serif, system-ui, sans-serif; fill: #9fb0c3; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; }
+      .title { font-family: ui-sans-serif, system-ui, sans-serif; fill: #f4f7fb; font-size: 36px; font-weight: 600; }
+      .body { font-family: ui-sans-serif, system-ui, sans-serif; fill: #c5d0dc; font-size: 18px; }
+      .card-title { font-family: ui-sans-serif, system-ui, sans-serif; fill: #f4f7fb; font-size: 22px; font-weight: 600; }
+      .card-body { font-family: ui-sans-serif, system-ui, sans-serif; fill: #a8b6c6; font-size: 15px; }
+      .nav { font-family: ui-sans-serif, system-ui, sans-serif; fill: #d7e0ea; font-size: 15px; }
+      .word { font-family: ui-sans-serif, system-ui, sans-serif; fill: #eef3f8; font-size: 18px; font-weight: 700; letter-spacing: 0.08em; }
+    </style>
+  </defs>
+  <rect width="1200" height="1600" fill="url(#bg)"/>
+
+  <!-- Header -->
+  <rect x="40" y="28" width="1120" height="56" rx="8" fill="#151d28" stroke="#243041"/>
+  <text class="word" x="64" y="62">KAHRELUM OS</text>
+  <text class="nav" x="760" y="62">Services</text>
+  <text class="nav" x="860" y="62">Proof</text>
+  <text class="nav" x="940" y="62">Modules</text>
+  <text class="nav" x="1050" y="62">Contact</text>
+
+  <!-- Hero -->
+  <text class="label" x="64" y="140">KAHRELUM OS · evidence-to-decision control plane</text>
+  <text class="title" x="64" y="190">Build systems that stay</text>
+  <text class="title" x="64" y="236">human-approved before action.</text>
+  <text class="body" x="64" y="290">Three offers: evaluation toolkit · custom research/decision system · authorized red-team assessment.</text>
+  <rect x="64" y="320" width="180" height="36" rx="6" fill="#2a3b52"/>
+  <text class="nav" x="86" y="343">See services</text>
+  <rect x="260" y="320" width="160" height="36" rx="6" fill="#1a2432" stroke="#334155"/>
+  <text class="nav" x="288" y="343">Architecture</text>
+
+  <!-- Services row -->
+  <text class="label" x="64" y="410">Three offers</text>
+  <text class="title" x="64" y="450" style="font-size:28px">Choose the outcome you need.</text>
+
+  <rect x="64" y="480" width="340" height="200" rx="12" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="88" y="516">01 · Toolkit</text>
+  <text class="card-title" x="88" y="552">AI Evaluation Toolkit</text>
+  <text class="card-body" x="88" y="586">$15–$99 · templates, tests,</text>
+  <text class="card-body" x="88" y="610">review workflows</text>
+
+  <rect x="430" y="480" width="340" height="200" rx="12" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="454" y="516">02 · Build</text>
+  <text class="card-title" x="454" y="552">Custom Research System</text>
+  <text class="card-body" x="454" y="586">$500–$1,500 · schemas,</text>
+  <text class="card-body" x="454" y="610">source rules, deployment</text>
+
+  <rect x="796" y="480" width="340" height="200" rx="12" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="820" y="516">03 · Assessment</text>
+  <text class="card-title" x="820" y="552">Authorized Red-Team</text>
+  <text class="card-body" x="820" y="586">$2,500–$5,000 · scoped</text>
+  <text class="card-body" x="820" y="610">adversarial assessment</text>
+
+  <!-- Modules -->
+  <text class="label" x="64" y="740">KAHRELUM modules</text>
+  <text class="title" x="64" y="780" style="font-size:28px">Public proof of capability</text>
+
+  <!-- Module cards stacked -->
+  <rect x="64" y="810" width="1072" height="90" rx="10" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="88" y="844">01 · OS</text>
+  <text class="card-title" x="88" y="876">KAHRELUM OS — architecture & doctrine</text>
+
+  <rect x="64" y="916" width="1072" height="90" rx="10" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="88" y="950">02 · PLATFORM</text>
+  <text class="card-title" x="88" y="982">RECORD LOCK — evidence & controlled publication</text>
+
+  <rect x="64" y="1022" width="1072" height="90" rx="10" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="88" y="1056">03 · AI EVALUATION</text>
+  <text class="card-title" x="88" y="1088">AI Red-Team Dashboard</text>
+
+  <rect x="64" y="1128" width="1072" height="90" rx="10" fill="#151d28" stroke="#2a384c"/>
+  <text class="label" x="88" y="1162">04 · OPERATING PICTURE</text>
+  <text class="card-title" x="88" y="1194">Intel Tripwire</text>
+
+  <!-- Pipeline strip -->
+  <text class="label" x="64" y="1280">Control plane (public summary)</text>
+  <rect x="64" y="1300" width="1072" height="120" rx="12" fill="#0f1620" stroke="#334155"/>
+  <text class="card-body" x="100" y="1350">INTAKE → CLASSIFY → VERIFY → STRESS → GATE → ACT / RECORD</text>
+  <text class="card-body" x="100" y="1388">SCOUT (find) → BLACKGLASS (attack) → VERIFY → DECIDE</text>
+
+  <text class="body" x="64" y="1500" style="font-size:14px;fill:#7f8fa3">Mockup · not production chrome · KAHRELUM OS portfolio layout 2026-08-24</text>
+</svg>
