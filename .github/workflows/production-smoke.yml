@@ -4,6 +4,18 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 */6 * * *'
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'eu-chat-control/**'
+      - 'russian-jfk-dossier/**'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'styles.css'
+      - 'assets/**'
+      - 'vercel.json'
+      - '.github/workflows/production-smoke.yml'
 
 permissions:
   contents: read
@@ -23,40 +35,64 @@ jobs:
           set -euo pipefail
 
           base='https://hasan-research-systems.vercel.app'
-          routes=(
-            '/'
-            '/eu-chat-control'
-            '/russian-jfk-dossier'
-            '/robots.txt'
-            '/sitemap.xml'
-            '/styles.css'
-            '/assets/portfolio-preview.svg'
-            '/assets/eu-chat-control-preview.svg'
-            '/assets/russian-jfk-dossier-preview.svg'
-          )
+          fetch() {
+            local route="$1"
+            local output="$2"
+            local status
+            status=$(curl --silent --show-error --location --retry 3 --retry-all-errors \
+              --max-time 30 --output "$output" --write-out '%{http_code}' "$base$route")
+            if [[ "$status" != '200' ]]; then
+              echo "::error title=Production route failed::$route returned HTTP $status"
+              return 1
+            fi
+            if [[ ! -s "$output" ]]; then
+              echo "::error title=Empty production response::$route returned an empty body"
+              return 1
+            fi
+            echo "Verified $route"
+          }
 
-          for route in "${routes[@]}"; do
-            status=$(curl --silent --show-error --location --output /tmp/body --write-out '%{http_code}' "$base$route")
-            test "$status" = '200' || {
-              echo "Expected HTTP 200 for $route; received $status"
+          assert_contains() {
+            local file="$1"
+            local marker="$2"
+            if ! grep --fixed-strings --quiet "$marker" "$file"; then
+              echo "::error title=Production identity mismatch::Missing marker: $marker"
+              return 1
+            fi
+          }
+
+          fetch '/' /tmp/home
+          fetch '/eu-chat-control' /tmp/eu-chat-control
+          fetch '/russian-jfk-dossier' /tmp/russian-jfk-dossier
+          fetch '/robots.txt' /tmp/robots
+          fetch '/sitemap.xml' /tmp/sitemap
+          fetch '/styles.css' /tmp/styles
+          fetch '/assets/portfolio-preview.svg' /tmp/portfolio-preview
+          fetch '/assets/eu-chat-control-preview.svg' /tmp/eu-preview
+          fetch '/assets/russian-jfk-dossier-preview.svg' /tmp/jfk-preview
+
+          assert_contains /tmp/home 'KAHRELUM OS'
+          assert_contains /tmp/home 'Evidence-to-Decision Control Plane'
+          assert_contains /tmp/home 'Hasan Raza Kazmi'
+          assert_contains /tmp/home 'RECORD LOCK'
+          assert_contains /tmp/home 'Proof before pitch'
+          assert_contains /tmp/eu-chat-control 'EU Chat Control Monitor'
+          assert_contains /tmp/russian-jfk-dossier 'The Russian JFK Dossier'
+          assert_contains /tmp/robots 'User-agent: *'
+          assert_contains /tmp/sitemap 'https://hasan-research-systems.vercel.app/'
+
+          curl --silent --show-error --location --retry 3 --retry-all-errors \
+            --max-time 30 --dump-header /tmp/headers --output /dev/null "$base/"
+
+          for header in \
+            'x-content-type-options: nosniff' \
+            'x-frame-options: DENY' \
+            'referrer-policy: strict-origin-when-cross-origin' \
+            'permissions-policy: camera=(), microphone=(), geolocation=()'; do
+            if ! grep --fixed-strings --ignore-case --quiet "$header" /tmp/headers; then
+              echo "::error title=Security header missing::$header"
               exit 1
-            }
-            test -s /tmp/body || {
-              echo "Empty response body for $route"
-              exit 1
-            }
+            fi
           done
-
-          curl --silent --show-error --location --dump-header /tmp/headers --output /tmp/home "$base/"
-
-          grep -qi '^x-content-type-options: nosniff' /tmp/headers
-          grep -qi '^x-frame-options: DENY' /tmp/headers
-          grep -qi '^referrer-policy: strict-origin-when-cross-origin' /tmp/headers
-          grep -qi '^permissions-policy: camera=(), microphone=(), geolocation=()' /tmp/headers
-
-          grep -q 'Hasan Raza Kazmi' /tmp/home
-          grep -q 'AURORA GRID' /tmp/home
-          grep -q 'RECORD LOCK' /tmp/home
-          grep -q 'Inspectable proof' /tmp/home
 
           echo 'Production smoke checks passed.'

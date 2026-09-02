@@ -85,7 +85,13 @@ for (const htmlFile of htmlFiles) {
 
 if (existsSync(resolve(root, 'index.html'))) {
   const homepage = read('index.html');
-  for (const token of ['AURORA GRID', 'RECORD LOCK', 'Inspectable proof', 'Selected work']) {
+  for (const token of [
+    'KAHRELUM OS',
+    'Evidence-to-Decision Control Plane',
+    'RECORD LOCK',
+    'Proof before pitch',
+    'KAHRELUM modules',
+  ]) {
     if (!homepage.includes(token)) fail(`index.html: missing required content token: ${token}`);
   }
   if (!/<link\b[^>]*rel=["']canonical["'][^>]*href=["']https:\/\/hasan-research-systems\.vercel\.app\//i.test(homepage)) {
